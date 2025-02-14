@@ -1,4 +1,4 @@
-package Semana1;
+package semana2;
 
 public class Ejemplo {
 
