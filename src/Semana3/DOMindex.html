@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="texto">Hola</p>
+
+    <button onclick="cambiarTexto()">Cambiar</button>
+
+    <button id = "clickar"> Click</button>
+
+    <input type="text" id="porpantalla" placeholder="escribe"></input>
+    <button id = "mostrarTexto">Show</button>
+
+
+    <script>
+
+        function cambiarTexto() {
+        
+        document.getElementById("texto").style.color = "#32a852";
+        }
+        
+        </script>
+
+    <script> document.getElementById("mostrarTexto").addEventListener("click",function() {
+        var texto = document.getElementById("porpantalla").value;
+        alert("Escribiste: " + texto);
+    });
+
+        </script>
+</body>
+</html>
