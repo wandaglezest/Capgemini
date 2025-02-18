@@ -20,24 +20,41 @@
         }
 
         .formulario {
-            background-color: lightblue;
-            padding: 20px;
-            border-radius: 5px;
+            display: flex;               /* Activa Flexbox */
+            flex-direction: column;      /* Coloca los divs internos en una columna */
+            justify-content: center;     /* Centra los elementos dentro del contenedor */
+            align-items: center;         /* Centra los elementos horizontalmente */
+            background-color: rgb(187, 197, 201); /* Fondo del formulario */
+            padding: 20px;               /* Espaciado dentro del formulario */
+            border-radius: 5px;          /* Bordes redondeados */
+            width: 250px;                /* Ancho fijo para el formulario */
+            margin: 100px auto;          /* Centra el formulario en la pantalla */
+        }
+
+        /* Estilos para los divs internos */
+        .interior {
+            width: 100%;                 /* Asegura que cada div interno ocupe el 100% del ancho del contenedor */
+            height: 50px;                /* Altura de los divs */
+            background-color: rgb(226, 236, 249); /* Fondo de los divs */
+            margin: 10px 0;              /* Espacio entre los divs */
+            text-align: center;          /* Centra el texto dentro del div */
+            line-height: 50px;           /* Centra el texto verticalmente */
+            border-radius: 5px;          /* Bordes redondeados */
         }
         </style>
 </head>
 <body>
-<div class="formulario">
+
     <h1>Hola, mundo</h1>
 
     <p>Bienvenidos a la web de Wanda.</p>
 
+<div class="formulario">
+    <div class="interior"><input type="text" id="nombre" placeholder="Nombre";></input></div>
+    <div class="interior"><input type="text" id="edad" placeholder="Edad";></input></div>
+    <div class="interior"><input type="text" id="email" placeholder="Correo electrónico";></input></div>
 
-    <input type="text" id="nombre" placeholder="Nombre";></input>
-    <input type="text" id="edad" placeholder="Edad";></input>
-    <input type="text" id="email" placeholder="Correo electrónico";></input>
-
-    <button onclick="capturaDatos()">Enviar</button>
+    <div class="interior"><button onclick="capturaDatos()">Enviar</button></div>
 
 </div>
     <script>
