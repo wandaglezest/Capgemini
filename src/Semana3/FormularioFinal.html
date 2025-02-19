@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    
+        h1 {
+            color: #527fc7;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        } 
+
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #2a3342;
+            text-align: center;
+        }
+
+        .formulario {
+            display: flex;               /* Activa Flexbox */
+            flex-direction: column;      /* Coloca los divs internos en una columna */
+            justify-content: center;     /* Centra los elementos dentro del contenedor */
+            align-items: center;         /* Centra los elementos horizontalmente */
+            background-color: rgb(187, 197, 201); /* Fondo del formulario */
+            padding: 20px;               /* Espaciado dentro del formulario */
+            border-radius: 5px;          /* Bordes redondeados */
+            width: 250px;                /* Ancho fijo para el formulario */
+            margin: 100px auto;          /* Centra el formulario en la pantalla */
+        }
+
+        /* Estilos para los divs internos */
+        .interior {
+            width: 100%;                 /* Asegura que cada div interno ocupe el 100% del ancho del contenedor */
+            height: 50px;                /* Altura de los divs */
+            background-color: rgb(226, 236, 249); /* Fondo de los divs */
+            margin: 10px 0;              /* Espacio entre los divs */
+            text-align: center;          /* Centra el texto dentro del div */
+            line-height: 50px;           /* Centra el texto verticalmente */
+            border-radius: 5px;          /* Bordes redondeados */
+        }
+        </style>
+</head>
+<body>
+
+    <h1>Hola, mundo</h1>
+
+    <p>Bienvenidos a la web de Wanda.</p>
+
+<div class="formulario">
+    <div class="interior"><input type="text" id="nombre" placeholder="Nombre";></input></div>
+    <div class="interior"><input type="text" id="edad" placeholder="Edad";></input></div>
+    <div class="interior"><input type="text" id="email" placeholder="Correo electrónico";></input></div>
+
+    <div class="interior"><button onclick="capturaDatos()">Enviar</button></div>
+
+</div>
+    <script>
+
+        function capturaDatos() {
+            let nombre = document.getElementById("nombre").value;
+            let edad = document.getElementById("edad").value;
+            let email = document.getElementById("email").value;
+            
+            alert("Los datos recogidos son: \nNombre: " + nombre + " Edad: " + edad + " Email: " + email)
+        }
+    </script>
+
+</body>
+</html>
