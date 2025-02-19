@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ConexionDBeaber {
 	public static void main(String[] args) {
 
-        String url = "jdbc:oracle:thin:@frparccsw:1521/FREEPDB1";
+         String url = "jdbc:oracle:thin:@frparccsw:1521/FREEPDB1";
         String usuario = "user2";
         String password = "user2";
 
@@ -145,7 +145,7 @@ public class ConexionDBeaber {
 
                 int rowsAffected = pstmt.executeUpdate();
                 if (rowsAffected > 0) {
-                    System.out.println("El registro ha sido insertado correctamente.");
+                    System.out.println("El registro ha sido insertado correctamente .");
                 } else {
                     System.out.println("No se pudo insertar el registro.");
                 }
