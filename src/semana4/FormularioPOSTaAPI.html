@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar Post</title>
+</head>
+<!--recogemos con un formulario título y contenido, 
+  luego tendrá que darnos ese mismo título y contenido
+  en una respuesta json que transformamos en texto legible con JSON.stringify -->
+
+<body>
+  <h1>Formulario para enviar un post</h1>
+  <form id="postForm">
+    <input type="text" id="title" placeholder="Título" required><br><br>
+    <textarea id="body" placeholder="Contenido" required></textarea><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+  
+
+  <h2>Respuesta:</h2>
+  <pre id="response"></pre>
+
+  <script>
+    document.getElementById('postForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const body = document.getElementById('body').value;
+
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: title, body: body, userId: 1 })
+      })
+        .then(response => response.json()) 
+        .then(data => {
+          document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          document.getElementById('response').textContent = 'Error: ' + error;
+        });
+
+        /*por defecto un fetch nos devuelve datos en formato json, los cuales mete en un
+         'response' de JavaScript, necesitamos el método .json() para manipular esos datos 
+         convirtiéndolos en un objeto*/
+
+         /*cuando tenemos el objeto json transformado, se convierte en 'data, que contiene 
+         los datos que la API te ha devuelto'*/
+
+         /*'JSON.stringify(data, null, 2)' usamos null porque no queremos filtrar ningún dato, 
+         por ejemplo si usáramos key,value, podriamos decirle al código que no pusiera alguno de
+          los datos y luego el value para indicarle que ponga el resto de propiedades igual. Y el 2 
+          es un modo de espaciado, si hubiesemos elegido el 0 lo pondría todo en la misma línea*/
+    });
+  </script>
+</body>
+</html>
