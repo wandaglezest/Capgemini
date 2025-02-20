@@ -9,10 +9,79 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/* EL pom.xml SE VERÍA ASi:
+ * 
+ * <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.bbdd</groupId>
+	<artifactId>BBDDyEclipse</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>BBDDyEclipse</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+    		<groupId>com.oracle.database.jdbc</groupId>
+    		<artifactId>ojdbc8</artifactId>
+    		<version>19.8.0.0</version>
+		</dependency>
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.29</version> <!-- Asegúrate de usar la versión más reciente -->
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+*/
+
 public class ConexionDBeaber {
 	public static void main(String[] args) {
 
-        String url = "jdbc:oracle:thin:@frparccsw:1521/FREEPDB1";
+         String url = "jdbc:oracle:thin:@frparccsw:1521/FREEPDB1";
         String usuario = "user2";
         String password = "user2";
 
@@ -145,7 +214,7 @@ public class ConexionDBeaber {
 
                 int rowsAffected = pstmt.executeUpdate();
                 if (rowsAffected > 0) {
-                    System.out.println("El registro ha sido insertado correctamente.");
+                    System.out.println("El registro ha sido insertado correctamente .");
                 } else {
                     System.out.println("No se pudo insertar el registro.");
                 }
